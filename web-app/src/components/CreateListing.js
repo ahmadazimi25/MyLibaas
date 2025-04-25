@@ -12,11 +12,13 @@ import {
   Grid,
   InputAdornment,
   MenuItem,
-  IconButton
+  IconButton,
+  CircularProgress
 } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
 import { useAuth } from '../contexts/AuthContext';
 import axios from 'axios';
+import ImageUploadService from '../services/ImageUploadService';
 
 const SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 const OCCASIONS = ['Casual', 'Formal', 'Wedding', 'Party', 'Traditional', 'Business'];
@@ -24,8 +26,10 @@ const OCCASIONS = ['Casual', 'Formal', 'Wedding', 'Party', 'Traditional', 'Busin
 const CreateListing = ({ open, onClose }) => {
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
   const [error, setError] = useState('');
   const [images, setImages] = useState([]);
+  const [uploadedImages, setUploadedImages] = useState([]);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -57,21 +61,22 @@ const CreateListing = ({ open, onClose }) => {
     try {
       setError('');
       setLoading(true);
+      setUploadProgress(0);
 
-      const formDataToSend = new FormData();
-      images.forEach(image => {
-        formDataToSend.append('images', image);
-      });
-      Object.keys(formData).forEach(key => {
-        formDataToSend.append(key, formData[key]);
-      });
+      // First upload images to Cloudinary
+      const uploadedImageUrls = await ImageUploadService.uploadMultipleImages(images);
+      setUploadedImages(uploadedImageUrls);
+      setUploadProgress(50);
 
-      await axios.post('http://localhost:5000/api/clothing', formDataToSend, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
+      // Then create the listing with the image URLs
+      const listingData = {
+        ...formData,
+        images: uploadedImageUrls.map(img => img.url),
+        userId: user.uid
+      };
 
+      await axios.post('http://localhost:5000/api/clothing', listingData);
+      setUploadProgress(100);
       onClose();
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to create listing');
@@ -111,6 +116,14 @@ const CreateListing = ({ open, onClose }) => {
                 <Typography variant="body2" sx={{ mt: 1 }}>
                   {images.length} image(s) selected
                 </Typography>
+              )}
+              {uploadProgress > 0 && (
+                <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                  <CircularProgress variant="determinate" value={uploadProgress} />
+                  <Typography variant="body2" sx={{ ml: 2 }}>
+                    Uploading images ({uploadProgress}%)
+                  </Typography>
+                </Box>
               )}
             </Grid>
 
