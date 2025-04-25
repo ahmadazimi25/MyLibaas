@@ -30,6 +30,7 @@ import NotificationPreferences from './components/Notification/NotificationPrefe
 import DisputeAnalytics from './components/Analytics/DisputeAnalytics';
 import Footer from './components/Footer/Footer';
 import HowItWorks from './components/HowItWorks/HowItWorks';
+import BecomeALender from './components/BecomeALender/BecomeALender';
 
 // Pages
 import Home from './pages/Home';
@@ -176,6 +177,7 @@ function App() {
                                       <Route path="/terms" element={<TermsOfService />} />
                                       <Route path="/rental-agreement" element={<RentalAgreement />} />
                                       <Route path="/return-policy" element={<ReturnPolicy />} />
+                                      <Route path="/become-a-lender" element={<BecomeALender />} />
                                     </Routes>
                                     <Footer />
                                   </Box>
