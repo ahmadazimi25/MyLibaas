@@ -1,4 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  updateProfile,
+} from 'firebase/auth';
+import { auth } from '../config/firebase';
 
 const AuthContext = createContext(null);
 
@@ -7,46 +15,57 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check for stored auth token
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      // TODO: Validate token with backend
-      const storedUser = JSON.parse(localStorage.getItem('user'));
-      setUser(storedUser);
-    }
-    setLoading(false);
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
   }, []);
 
   const login = async (email, password) => {
     try {
-      // TODO: Replace with actual API call
-      const response = { user: { id: 1, email, name: email.split('@')[0] }, token: 'dummy-token' };
-      localStorage.setItem('authToken', response.token);
-      localStorage.setItem('user', JSON.stringify(response.user));
-      setUser(response.user);
-      return { success: true };
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      return { success: true, user: userCredential.user };
     } catch (error) {
-      return { success: false, error: error.message };
+      console.error('Login error:', error);
+      return { 
+        success: false, 
+        error: error.code === 'auth/user-not-found' ? 'Invalid email or password' :
+               error.code === 'auth/wrong-password' ? 'Invalid email or password' :
+               error.code === 'auth/invalid-email' ? 'Invalid email format' :
+               'An error occurred during login'
+      };
     }
   };
 
   const signup = async (email, password, name) => {
     try {
-      // TODO: Replace with actual API call
-      const response = { user: { id: 1, email, name }, token: 'dummy-token' };
-      localStorage.setItem('authToken', response.token);
-      localStorage.setItem('user', JSON.stringify(response.user));
-      setUser(response.user);
-      return { success: true };
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, {
+        displayName: name
+      });
+      return { success: true, user: userCredential.user };
     } catch (error) {
-      return { success: false, error: error.message };
+      console.error('Signup error:', error);
+      return {
+        success: false,
+        error: error.code === 'auth/email-already-in-use' ? 'Email already in use' :
+               error.code === 'auth/invalid-email' ? 'Invalid email format' :
+               error.code === 'auth/weak-password' ? 'Password is too weak' :
+               'An error occurred during signup'
+      };
     }
   };
 
-  const logout = () => {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('user');
-    setUser(null);
+  const logout = async () => {
+    try {
+      await signOut(auth);
+      return { success: true };
+    } catch (error) {
+      console.error('Logout error:', error);
+      return { success: false, error: 'Failed to log out' };
+    }
   };
 
   if (loading) {
