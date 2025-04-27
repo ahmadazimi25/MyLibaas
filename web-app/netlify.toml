@@ -1,19 +1,21 @@
 [build]
-  command = "npm run build"
+  command = "CI=false npm run build"
   publish = "build"
 
 [build.environment]
   NODE_VERSION = "18.17.0"
   NPM_VERSION = "9.x"
+  DISABLE_ESLINT_PLUGIN = "true"
+  CI = "false"
+
+[dev]
+  framework = "create-react-app"
+  targetPort = 3000
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[dev]
-  framework = "create-react-app"
-  targetPort = 3000
 
 [[headers]]
   for = "/*"
