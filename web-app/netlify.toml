@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --save-dev cross-env && npx cross-env CI=false DISABLE_ESLINT_PLUGIN=true npm run build"
+  command = "chmod +x build.sh && ./build.sh"
   publish = "build"
 
 [build.environment]
