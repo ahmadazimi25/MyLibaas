@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link as RouterLink } from 'react-router-dom';
 import {
   AppBar,
   Box,
@@ -128,12 +128,13 @@ const Navbar = () => {
           {/* Desktop menu */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
-                key={page.title}
-                onClick={() => handleNavigate(page.path)}
+              <MenuItem
+                key={page.path}
+                component={RouterLink}
+                to={page.path}
+                onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
-                  mx: 1,
                   color: '#3E2723',
                   display: 'block',
                   fontWeight: location.pathname === page.path ? 700 : 500,
@@ -160,7 +161,7 @@ const Navbar = () => {
                 }}
               >
                 {page.title}
-              </Button>
+              </MenuItem>
             ))}
           </Box>
 
