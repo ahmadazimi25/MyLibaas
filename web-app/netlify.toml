@@ -1,12 +1,13 @@
 [build]
-  command = "export CI=false && npm run build"
+  command = "npm install --save-dev cross-env && npx cross-env CI=false DISABLE_ESLINT_PLUGIN=true npm run build"
   publish = "build"
 
 [build.environment]
-  NODE_VERSION = "18.17.0"
+  NODE_VERSION = "18.x"
   NPM_VERSION = "9.x"
   DISABLE_ESLINT_PLUGIN = "true"
   CI = "false"
+  NETLIFY_USE_YARN = "false"
 
 [dev]
   framework = "create-react-app"
