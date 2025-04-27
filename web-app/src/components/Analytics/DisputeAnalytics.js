@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Box,
   Paper,
@@ -211,11 +211,7 @@ const DisputeAnalytics = () => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    loadData();
-  }, [timeframe]);
-
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -227,7 +223,11 @@ const DisputeAnalytics = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [timeframe]);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
 
   if (loading && !data) {
     return (
