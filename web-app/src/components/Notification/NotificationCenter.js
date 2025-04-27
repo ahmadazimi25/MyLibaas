@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Box,
   Badge,
@@ -109,15 +109,7 @@ const NotificationCenter = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [unreadCount, setUnreadCount] = useState(0);
 
-  useEffect(() => {
-    fetchNotifications();
-  }, []);
-
-  useEffect(() => {
-    setUnreadCount(notifications.filter((n) => !n.read).length);
-  }, [notifications]);
-
-  const fetchNotifications = async () => {
+  const fetchNotifications = useCallback(async () => {
     const result = await getNotifications({
       page: 1,
       limit: 10,
@@ -126,7 +118,21 @@ const NotificationCenter = () => {
     if (result.success) {
       setUnreadCount(result.unreadCount);
     }
-  };
+  }, [getNotifications, setUnreadCount]);
+
+  useEffect(() => {
+    fetchNotifications();
+  }, [fetchNotifications]);
+
+  useEffect(() => {
+    setUnreadCount(notifications.filter((n) => !n.read).length);
+  }, [notifications]);
+
+  useEffect(() => {
+    fetchNotifications();
+    const interval = setInterval(fetchNotifications, 60000); // Refresh every minute
+    return () => clearInterval(interval);
+  }, [fetchNotifications]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import {
   Box,
   Paper,
@@ -128,6 +128,29 @@ const IDVerification = () => {
   });
   const [showCamera, setShowCamera] = useState(false);
   const [cameraMode, setCameraMode] = useState(null);
+  const videoRef = useRef(null);
+  const [stream, setStream] = useState(null);
+
+  const initializeCamera = useCallback(async () => {
+    try {
+      const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
+      setStream(mediaStream);
+      if (videoRef.current) {
+        videoRef.current.srcObject = mediaStream;
+      }
+    } catch (error) {
+      console.error('Error accessing camera:', error);
+    }
+  }, []);
+
+  useEffect(() => {
+    initializeCamera();
+    return () => {
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+      }
+    };
+  }, [stream, initializeCamera]);
 
   const handleNext = () => {
     setActiveStep((prev) => prev + 1);
