@@ -7,7 +7,6 @@ import {
   Typography,
   Card,
   CardContent,
-  CardMedia,
   List,
   ListItem,
   ListItemIcon,

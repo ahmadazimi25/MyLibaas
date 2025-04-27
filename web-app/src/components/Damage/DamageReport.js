@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   Box,
   Paper,
@@ -166,6 +166,12 @@ const DamageReport = ({ bookingId, itemId, onSubmit, onCancel }) => {
   const videoRef = React.useRef(null);
   const [stream, setStream] = useState(null);
 
+  const stopStream = useCallback(() => {
+    if (stream) {
+      stream.getTracks().forEach(track => track.stop());
+    }
+  }, [stream]);
+
   const initializeCamera = useCallback(async () => {
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -178,14 +184,10 @@ const DamageReport = ({ bookingId, itemId, onSubmit, onCancel }) => {
     }
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     initializeCamera();
-    return () => {
-      if (stream) {
-        stream.getTracks().forEach(track => track.stop());
-      }
-    };
-  }, [stream, initializeCamera]);
+    return () => stopStream();
+  }, [initializeCamera, stopStream]);
 
   return (
     <Paper component="form" onSubmit={handleSubmit} sx={{ p: 3 }}>

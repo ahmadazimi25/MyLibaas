@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Box,
   Paper,
@@ -211,7 +211,6 @@ const DisputeDetails = ({ disputeId }) => {
     getDispute,
     addDisputeMessage,
     proposeResolution,
-    acceptResolution,
     escalateDispute,
     loading,
     error,
@@ -223,16 +222,16 @@ const DisputeDetails = ({ disputeId }) => {
   const [showResolutionDialog, setShowResolutionDialog] = useState(false);
   const [showEscalationDialog, setShowEscalationDialog] = useState(false);
 
-  useEffect(() => {
-    fetchDispute();
-  }, [disputeId]);
-
-  const fetchDispute = async () => {
+  const fetchDispute = useCallback(async () => {
     const result = await getDispute(disputeId);
     if (result.success) {
       setDispute(result.dispute);
     }
-  };
+  }, [disputeId, getDispute]);
+
+  useEffect(() => {
+    fetchDispute();
+  }, [fetchDispute]);
 
   const handleSendMessage = async () => {
     if (!newMessage.trim() && attachments.length === 0) return;
@@ -262,13 +261,6 @@ const DisputeDetails = ({ disputeId }) => {
       ...data,
     });
 
-    if (result.success) {
-      fetchDispute();
-    }
-  };
-
-  const handleAcceptResolution = async () => {
-    const result = await acceptResolution(disputeId);
     if (result.success) {
       fetchDispute();
     }
