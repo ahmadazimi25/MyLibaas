@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Elegant hanger curve from your design -->
+  <path d="M100 40 Q130 40 150 60 T180 120 L20 120 Q40 80 60 60 T100 40" fill="none" stroke="#3E2723" stroke-width="4"/>
+  
+  <!-- myLibaas text using your exact font -->
+  <text x="100" y="160" font-family="serif" font-size="36" text-anchor="middle" fill="#3E2723" style="font-weight: normal;">myLibaas</text>
+</svg>

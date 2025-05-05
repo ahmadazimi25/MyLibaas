@@ -4,13 +4,14 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import PaidIcon from '@mui/icons-material/Paid';
 import RecyclingIcon from '@mui/icons-material/Recycling';
+import SearchIcon from '@mui/icons-material/Search';
 
 const HowItWorks = () => {
   const steps = [
     {
-      icon: <ShoppingBagIcon sx={{ fontSize: 40 }} />,
-      title: 'Browse & Book',
-      description: 'Find the perfect dress for your special event. Virtual try-on available to preview your look.'
+      icon: <SearchIcon sx={{ fontSize: 40 }} />,
+      title: 'Find Your Style',
+      description: 'Find the perfect dress for your special event.'
     },
     {
       icon: <LocalShippingIcon sx={{ fontSize: 40 }} />,
@@ -123,11 +124,11 @@ const HowItWorks = () => {
             Platform Features
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            • Secure payments and booking system<br />
-            • Virtual try-on technology<br />
-            • Integrated shipping coordination<br />
-            • Quality assurance and verification<br />
-            • Insurance for peace of mind
+            • Secure payment processing<br />
+            • Real-time availability<br />
+            • Quality assurance<br />
+            • Customer support<br />
+            • Damage protection
           </Typography>
         </Box>
       </Container>

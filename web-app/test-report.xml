@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\VerificationService.test.js">
+    <testCase name="VerificationService Integration Tests ID Verification should successfully verify valid ID" duration="9"/>
+    <testCase name="VerificationService Integration Tests ID Verification should reject invalid ID" duration="131"/>
+    <testCase name="VerificationService Integration Tests Address Verification should verify valid address" duration="3"/>
+    <testCase name="VerificationService Integration Tests Address Verification should reject invalid address" duration="9"/>
+    <testCase name="VerificationService Integration Tests Phone Verification should initiate phone verification" duration="2"/>
+    <testCase name="VerificationService Integration Tests Phone Verification should confirm valid verification code" duration="3"/>
+    <testCase name="VerificationService Integration Tests Verification Status should track verification status correctly" duration="4"/>
+    <testCase name="VerificationService Integration Tests Verification Status should correctly identify fully verified users" duration="3"/>
+  </file>
+  <file path="C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\ShippingService.test.js">
+    <testCase name="ShippingService Integration Tests createShipment should create a shipment" duration="185">
+      <failure message="Error: Failed to create shipment"><![CDATA[Error: Failed to create shipment
+    at Function._callee$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\logistics\ShippingService.js:67:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:20:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="ShippingService Integration Tests updateShipmentStatus should update shipment status" duration="12">
+      <failure message="Error: Failed to update shipment status"><![CDATA[Error: Failed to update shipment status
+    at Function._callee2$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\logistics\ShippingService.js:96:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:20:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="ShippingService Integration Tests getShipmentAnalytics should get shipment analytics" duration="2">
+      <failure message="TypeError: _ShippingService.default.getShipmentAnalytics is not a function"><![CDATA[TypeError: _ShippingService.default.getShipmentAnalytics is not a function
+    at _callee3$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\ShippingService.test.js:168:44)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="ShippingService Integration Tests validateAddress should validate address" duration="1">
+      <failure message="TypeError: _ShippingService.default.validateAddress is not a function"><![CDATA[TypeError: _ShippingService.default.validateAddress is not a function
+    at _callee4$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\ShippingService.test.js:181:44)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="ShippingService Integration Tests generateLabel should generate shipping label" duration="1">
+      <failure message="TypeError: _ShippingService.default.generateLabel is not a function"><![CDATA[TypeError: _ShippingService.default.generateLabel is not a function
+    at _callee5$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\ShippingService.test.js:203:44)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+  </file>
+  <file path="C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\QualityControlService.test.js">
+    <testCase name="QualityControlService Integration Tests should perform inspection" duration="146">
+      <failure message="FirebaseError: Expected first argument to collection() to be a CollectionReference, a DocumentReference or FirebaseFirestore"><![CDATA[FirebaseError: Expected first argument to collection() to be a CollectionReference, a DocumentReference or FirebaseFirestore]]></failure>
+    </testCase>
+    <testCase name="QualityControlService Integration Tests should complete inspection" duration="40">
+      <failure message="FirebaseError: Expected first argument to collection() to be a CollectionReference, a DocumentReference or FirebaseFirestore"><![CDATA[FirebaseError: Expected first argument to collection() to be a CollectionReference, a DocumentReference or FirebaseFirestore]]></failure>
+    </testCase>
+    <testCase name="QualityControlService Integration Tests should verify authenticity" duration="80">
+      <failure message="TypeError: this.checkSerialNumber is not a function"><![CDATA[TypeError: this.checkSerialNumber is not a function
+    at Function._callee3$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\quality\QualityControlService.js:117:14)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.verifyAuthenticity (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\quality\QualityControlService.js:113:34)
+    at _callee5$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\QualityControlService.test.js:82:48)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="QualityControlService Integration Tests should assess damage" duration="33">
+      <failure message="FirebaseError: Expected first argument to collection() to be a CollectionReference, a DocumentReference or FirebaseFirestore"><![CDATA[FirebaseError: Expected first argument to collection() to be a CollectionReference, a DocumentReference or FirebaseFirestore]]></failure>
+    </testCase>
+    <testCase name="QualityControlService Integration Tests should validate photos" duration="15">
+      <failure message="TypeError: _this.validatePhoto is not a function"><![CDATA[TypeError: _this.validatePhoto is not a function
+    at map (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\quality\QualityControlService.js:190:34)
+    at Array.map (<anonymous>)
+    at Function._callee5$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\quality\QualityControlService.js:190:16)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.validatePhotos (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\quality\QualityControlService.js:187:30)
+    at _callee7$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\QualityControlService.test.js:113:49)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="QualityControlService Integration Tests should validate listing accuracy" duration="19">
+      <failure message="TypeError: this.getItem is not a function"><![CDATA[TypeError: this.getItem is not a function
+    at Function._callee6$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\quality\QualityControlService.js:214:31)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.validateListingAccuracy (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\quality\QualityControlService.js:212:39)
+    at _callee8$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\QualityControlService.test.js:122:48)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="QualityControlService Integration Tests should run automated checks" duration="14">
+      <failure message="FirebaseError: Expected first argument to collection() to be a CollectionReference, a DocumentReference or FirebaseFirestore"><![CDATA[FirebaseError: Expected first argument to collection() to be a CollectionReference, a DocumentReference or FirebaseFirestore]]></failure>
+    </testCase>
+    <testCase name="QualityControlService Integration Tests should calculate overall rating" duration="6"/>
+  </file>
+  <file path="C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\SupportService.test.js">
+    <testCase name="SupportService Integration Tests createTicket should create a support ticket" duration="162">
+      <failure message="Error: Failed to create support ticket"><![CDATA[Error: Failed to create support ticket
+    at Function._callee$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\support\SupportService.js:55:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.createTicket (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\support\SupportService.js:20:28)
+    at _callee$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\SupportService.test.js:86:43)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="SupportService Integration Tests updateTicketStatus should update ticket status" duration="11">
+      <failure message="Error: Failed to update ticket status"><![CDATA[Error: Failed to update ticket status
+    at Function._callee2$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\support\SupportService.js:93:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:20:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="SupportService Integration Tests addMessage should add message to ticket" duration="11">
+      <failure message="Error: Failed to add message to ticket"><![CDATA[Error: Failed to add message to ticket
+    at Function._callee3$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\support\SupportService.js:131:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:20:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="SupportService Integration Tests resolveTicket should resolve ticket" duration="21">
+      <failure message="Error: Failed to resolve ticket"><![CDATA[Error: Failed to resolve ticket
+    at Function._callee4$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\support\SupportService.js:168:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:20:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="SupportService Integration Tests getTicketAnalytics should get ticket analytics" duration="9">
+      <failure message="Error: Failed to get ticket analytics"><![CDATA[Error: Failed to get ticket analytics
+    at Function._callee5$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\support\SupportService.js:200:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _throw (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:20:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+  </file>
+  <file path="C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js">
+    <testCase name="EmergencyResponseService Integration Tests reportIncident should create an incident record" duration="179">
+      <failure message="Error: Failed to report incident"><![CDATA[Error: Failed to report incident
+    at Function._callee$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:77:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.reportIncident (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:35:30)
+    at _callee$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:101:53)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests createResponsePlan should generate a response plan for an incident" duration="20">
+      <failure message="Error: Failed to create response plan"><![CDATA[Error: Failed to create response plan
+    at Function._callee2$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:98:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.createResponsePlan (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:81:34)
+    at _callee2$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:124:53)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests initiateEmergencyResponse should initiate response and update incident status" duration="18">
+      <failure message="Error: Failed to initiate emergency response"><![CDATA[Error: Failed to initiate emergency response
+    at Function._callee3$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:123:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.initiateEmergencyResponse (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:102:41)
+    at _callee3$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:150:53)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests generateIncidentReport should generate a report for the incident" duration="62">
+      <failure message="Error: Failed to generate incident report"><![CDATA[Error: Failed to generate incident report
+    at Function._callee5$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:252:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.generateIncidentReport (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:219:38)
+    at _callee4$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:181:53)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests getRecommendations should get recommendations based on incident type" duration="1">
+      <failure message="TypeError: _EmergencyResponseService.default.getRecommendations is not a function"><![CDATA[TypeError: _EmergencyResponseService.default.getRecommendations is not a function
+    at _callee5$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:192:53)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests Incident Reporting should successfully report new incident" duration="11">
+      <failure message="Error: Failed to report incident"><![CDATA[Error: Failed to report incident
+    at Function._callee$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:77:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.reportIncident (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:35:30)
+    at _callee6$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:211:53)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests Incident Reporting should create appropriate response plan" duration="12">
+      <failure message="Error: Failed to create response plan"><![CDATA[Error: Failed to create response plan
+    at Function._callee2$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:98:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.createResponsePlan (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:81:34)
+    at _callee7$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:236:51)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests Emergency Response should initiate emergency response" duration="9">
+      <failure message="Error: Failed to initiate emergency response"><![CDATA[Error: Failed to initiate emergency response
+    at Function._callee3$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:123:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.initiateEmergencyResponse (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:102:41)
+    at _callee8$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:261:53)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests Emergency Response should assign correct response team" duration="3"/>
+    <testCase name="EmergencyResponseService Integration Tests Emergency Response should execute immediate actions" duration="9">
+      <failure message="Error: Failed to initiate emergency response"><![CDATA[Error: Failed to initiate emergency response
+    at Function._callee3$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:123:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.initiateEmergencyResponse (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:102:41)
+    at _callee10$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:293:38)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests Incident Resolution should resolve incident successfully" duration="1">
+      <failure message="TypeError: _EmergencyResponseService.default.resolveIncident is not a function"><![CDATA[TypeError: _EmergencyResponseService.default.resolveIncident is not a function
+    at _callee11$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:320:38)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests Incident Resolution should generate incident report" duration="8">
+      <failure message="Error: Failed to generate incident report"><![CDATA[Error: Failed to generate incident report
+    at Function._callee5$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:252:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.generateIncidentReport (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:219:38)
+    at _callee12$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:352:53)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests Team Management should notify response team" duration="6">
+      <failure message="Error: Failed to notify response team"><![CDATA[Error: Failed to notify response team
+    at Function._callee4$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:143:13)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Function.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Function.notifyResponseTeam (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\infrastructure\EmergencyResponseService.js:127:34)
+    at _callee13$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\EmergencyResponseService.test.js:369:38)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="EmergencyResponseService Integration Tests Team Management should follow escalation path" duration="1"/>
+    <testCase name="EmergencyResponseService Integration Tests Metrics and Reporting should collect incident metrics" duration="1"/>
+    <testCase name="EmergencyResponseService Integration Tests Metrics and Reporting should generate appropriate recommendations" duration="1"/>
+  </file>
+  <file path="C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\AccessibilityService.test.js">
+    <testCase name="AccessibilityService Integration Tests Accessibility Checks should perform complete accessibility check" duration="33">
+      <failure message="TypeError: _this.meetsContrastRequirements is not a function"><![CDATA[TypeError: _this.meetsContrastRequirements is not a function
+    at filter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:84:20)
+    at Array.filter (<anonymous>)
+    at AccessibilityService._callee5$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:82:37)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests Accessibility Checks should identify image alt text issues" duration="2">
+      <failure message="TypeError: _AccessibilityService.default.checkImageAltText is not a function"><![CDATA[TypeError: _AccessibilityService.default.checkImageAltText is not a function
+    at _callee2$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\AccessibilityService.test.js:134:49)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests Accessibility Checks should validate heading structure" duration="5">
+      <failure message="Error: expect(received).toBe(expected) // Object.is equality"><![CDATA[Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 1
+Received: undefined
+    at _callee3$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\AccessibilityService.test.js:149:29)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests Accessibility Checks should check color contrast" duration="2">
+      <failure message="TypeError: _this.meetsContrastRequirements is not a function"><![CDATA[TypeError: _this.meetsContrastRequirements is not a function
+    at filter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:84:20)
+    at Array.filter (<anonymous>)
+    at AccessibilityService._callee5$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:82:37)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests Language Support should set language successfully" duration="1">
+      <failure message="Error: Cannot find module &apos;../../locales/es.json&apos; from &apos;src/services/ux/AccessibilityService.js&apos;"><![CDATA[Error: Cannot find module '../../locales/es.json' from 'src/services/ux/AccessibilityService.js'
+    at Resolver.resolveModule (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:324:11)
+    at Resolver._getVirtualMockPath (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:471:14)
+    at Resolver._getAbsolutePath (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:457:14)
+    at Resolver.getModuleID (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:424:31)
+    at Runtime._shouldMock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runtime\build\index.js:1917:37)
+    at Runtime.require [as requireModuleOrMock] (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runtime\build\index.js:1204:14)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:149:43
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests Language Support should reject invalid language" duration="2"/>
+    <testCase name="AccessibilityService Integration Tests Language Support should load language resources" duration="0">
+      <failure message="Error: Cannot find module &apos;../../locales/es.json&apos; from &apos;src/services/ux/AccessibilityService.js&apos;"><![CDATA[Error: Cannot find module '../../locales/es.json' from 'src/services/ux/AccessibilityService.js'
+    at Resolver.resolveModule (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:324:11)
+    at Resolver._getVirtualMockPath (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:471:14)
+    at Resolver._getAbsolutePath (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:457:14)
+    at Resolver.getModuleID (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:424:31)
+    at Runtime._shouldMock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runtime\build\index.js:1917:37)
+    at Runtime.require [as requireModuleOrMock] (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runtime\build\index.js:1204:14)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:149:43
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests Language Support should translate text with parameters" duration="1">
+      <failure message="Error: Cannot find module &apos;../../locales/en.json&apos; from &apos;src/services/ux/AccessibilityService.js&apos;"><![CDATA[Error: Cannot find module '../../locales/en.json' from 'src/services/ux/AccessibilityService.js'
+    at Resolver.resolveModule (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:324:11)
+    at Resolver._getVirtualMockPath (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:471:14)
+    at Resolver._getAbsolutePath (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:457:14)
+    at Resolver.getModuleID (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-resolve\build\resolver.js:424:31)
+    at Runtime._shouldMock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runtime\build\index.js:1917:37)
+    at Runtime.require [as requireModuleOrMock] (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runtime\build\index.js:1204:14)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:149:43
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests Performance Optimization should optimize page load" duration="2">
+      <failure message="TypeError: this.optimizeImage is not a function"><![CDATA[TypeError: this.optimizeImage is not a function
+    at AccessibilityService._callee11$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:185:39)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests Performance Optimization should optimize images" duration="2">
+      <failure message="TypeError: this.optimizeImage is not a function"><![CDATA[TypeError: this.optimizeImage is not a function
+    at AccessibilityService._callee11$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:185:39)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests Performance Optimization should implement lazy loading" duration="1">
+      <failure message="Error: expect(received).toBe(expected) // Object.is equality"><![CDATA[Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 2
+Received: undefined
+    at _callee11$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\AccessibilityService.test.js:227:36)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests Mobile Responsiveness should check responsiveness across breakpoints" duration="4">
+      <failure message="TypeError: _this3.hasOverflow is not a function"><![CDATA[TypeError: _this3.hasOverflow is not a function
+    at forEach (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:261:16)
+    at Array.forEach (<anonymous>)
+    at AccessibilityService._callee15$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:260:14)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests Mobile Responsiveness should check specific breakpoint" duration="1">
+      <failure message="TypeError: _this3.hasOverflow is not a function"><![CDATA[TypeError: _this3.hasOverflow is not a function
+    at forEach (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:261:16)
+    at Array.forEach (<anonymous>)
+    at AccessibilityService._callee15$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:260:14)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests User Preferences should get user preferences" duration="1">
+      <failure message="TypeError: _firebaseConfig.db.collection is not a function"><![CDATA[TypeError: _firebaseConfig.db.collection is not a function
+    at AccessibilityService._callee16$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:282:26)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at AccessibilityService.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at AccessibilityService.getUserPreferences (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:277:27)
+    at _callee14$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\AccessibilityService.test.js:270:49)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests User Preferences should update user preferences" duration="0">
+      <failure message="TypeError: _firebaseConfig.db.collection is not a function"><![CDATA[TypeError: _firebaseConfig.db.collection is not a function
+    at AccessibilityService._callee16$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:282:26)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at AccessibilityService.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at AccessibilityService.getUserPreferences (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:277:27)
+    at AccessibilityService._callee17$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:294:21)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at AccessibilityService.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at AccessibilityService.updateUserPreferences (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:292:30)
+    at _callee15$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\AccessibilityService.test.js:282:34)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+    <testCase name="AccessibilityService Integration Tests User Preferences should return default preferences for new user" duration="1">
+      <failure message="TypeError: _firebaseConfig.db.collection is not a function"><![CDATA[TypeError: _firebaseConfig.db.collection is not a function
+    at AccessibilityService._callee16$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:282:26)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at AccessibilityService.apply (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at AccessibilityService.getUserPreferences (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\src\services\ux\AccessibilityService.js:277:27)
+    at _callee16$ (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\tests\integration\services\AccessibilityService.test.js:289:54)
+    at tryCatch (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:45:16)
+    at Generator.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:133:17)
+    at Generator.next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\regeneratorRuntime.js:74:21)
+    at asyncGeneratorStep (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:17)
+    at _next (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:17:9)
+    at C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:22:7
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\@babel\runtime\helpers\asyncToGenerator.js:14:12)
+    at Promise.then.completed (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at _runTestsForDescribeBlock (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\Users\ahmad\CascadeProjects\MyLibaas\web-app\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
+    </testCase>
+  </file>
+</testExecutions>

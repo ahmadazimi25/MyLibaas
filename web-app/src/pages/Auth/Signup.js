@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Container,
@@ -7,13 +7,14 @@ import {
   Typography,
   Link,
   Paper,
+  CircularProgress,
 } from '@mui/material';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 
 const Signup = () => {
   const navigate = useNavigate();
-  const { signup } = useAuth();
+  const { signup, user } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,31 +22,67 @@ const Signup = () => {
     confirmPassword: '',
   });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (user) {
+      console.log('User already logged in, redirecting to dashboard');
+      navigate('/dashboard');
+    }
+  }, [user, navigate]);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-
-    if (formData.password !== formData.confirmPassword) {
-      return setError('Passwords do not match');
-    }
-
+    
     try {
+      // Reset error state
+      setError('');
+      
+      // Start loading
+      setLoading(true);
+      
+      console.log('Form submitted with:', {
+        name: formData.name,
+        email: formData.email,
+        passwordLength: formData.password?.length
+      });
+
+      // Validation
+      if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
+        throw new Error('Please fill in all fields');
+      }
+
+      if (formData.password.length < 6) {
+        throw new Error('Password must be at least 6 characters');
+      }
+
+      if (formData.password !== formData.confirmPassword) {
+        throw new Error('Passwords do not match');
+      }
+
+      // Attempt signup
+      console.log('Starting signup process...');
       const result = await signup(formData.email, formData.password, formData.name);
+      
       if (result.success) {
+        console.log('Signup successful, redirecting...');
         navigate('/dashboard');
       } else {
-        setError(result.error || 'Failed to create account');
+        throw new Error(result.error || 'Failed to create account');
       }
     } catch (err) {
-      setError('An error occurred during signup');
+      console.error('Signup error:', err);
+      setError(err.message || 'An error occurred during signup');
+      setLoading(false);
     }
   };
 
@@ -89,6 +126,8 @@ const Signup = () => {
               autoFocus
               value={formData.name}
               onChange={handleChange}
+              error={!!error}
+              disabled={loading}
             />
             <TextField
               margin="normal"
@@ -100,6 +139,8 @@ const Signup = () => {
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}
+              error={!!error}
+              disabled={loading}
             />
             <TextField
               margin="normal"
@@ -111,6 +152,9 @@ const Signup = () => {
               id="password"
               value={formData.password}
               onChange={handleChange}
+              error={!!error}
+              disabled={loading}
+              helperText="Password must be at least 6 characters"
             />
             <TextField
               margin="normal"
@@ -122,14 +166,24 @@ const Signup = () => {
               id="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
+              error={!!error}
+              disabled={loading}
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              disabled={loading}
             >
-              Sign Up
+              {loading ? (
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <CircularProgress size={24} sx={{ mr: 1 }} />
+                  Creating Account...
+                </Box>
+              ) : (
+                'Sign Up'
+              )}
             </Button>
             <Box sx={{ textAlign: 'center' }}>
               <Link component={RouterLink} to="/login" variant="body2">

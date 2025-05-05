@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Routes, Route } from 'react-router-dom';
 import {
   Box,
   Container,
@@ -17,6 +17,7 @@ import {
   IconButton,
   AppBar,
   Toolbar,
+  Avatar,
 } from '@mui/material';
 import {
   Menu as MenuIcon,
@@ -25,18 +26,23 @@ import {
   BookOnline as BookingIcon,
   Star as RatingIcon,
   Settings as SettingsIcon,
+  Person as PersonIcon,
 } from '@mui/icons-material';
+import { useAuth } from '../../contexts/AuthContext';
 
 // Components
 import Overview from './Overview';
 import MyListings from './MyListings';
 import MyBookings from './MyBookings';
 import ReceivedBookings from './ReceivedBookings';
+import Profile from './Profile';
+import Settings from './Settings';
 
 const drawerWidth = 240;
 
 const menuItems = [
   { text: 'Overview', icon: <DashboardIcon />, path: '' },
+  { text: 'My Profile', icon: <PersonIcon />, path: '/profile' },
   { text: 'My Listings', icon: <ListIcon />, path: '/listings' },
   { text: 'My Bookings', icon: <BookingIcon />, path: '/bookings' },
   { text: 'Received Bookings', icon: <BookingIcon />, path: '/received-bookings' },
@@ -48,6 +54,7 @@ const Dashboard = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
+  const { user } = useAuth();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -60,9 +67,16 @@ const Dashboard = () => {
   const drawer = (
     <Box>
       <Toolbar>
-        <Typography variant="h6" noWrap component="div">
-          Dashboard
-        </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Avatar
+            src={user?.photoURL}
+            alt={user?.displayName || 'User'}
+            sx={{ width: 40, height: 40 }}
+          />
+          <Typography variant="subtitle1" noWrap>
+            {user?.displayName || 'Welcome'}
+          </Typography>
+        </Box>
       </Toolbar>
       <List>
         {menuItems.map((item) => (
@@ -89,6 +103,8 @@ const Dashboard = () => {
     switch (currentPath) {
       case '':
         return <Overview />;
+      case '/profile':
+        return <Profile />;
       case '/listings':
         return <MyListings />;
       case '/bookings':
@@ -98,7 +114,7 @@ const Dashboard = () => {
       case '/reviews':
         return <div>Reviews (Coming Soon)</div>;
       case '/settings':
-        return <div>Settings (Coming Soon)</div>;
+        return <Settings />;
       default:
         return <Overview />;
     }

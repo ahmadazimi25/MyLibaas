@@ -1,0 +1,159 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        
+    - name: Install Dependencies
+      run: npm ci
+      
+    - name: Run Tests
+      run: npm test
+      
+    - name: Upload Coverage
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: coverage
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        
+    - name: Install Dependencies
+      run: npm ci
+      
+    - name: Run ESLint
+      run: npm run lint
+      
+    - name: Run Type Check
+      run: npm run type-check
+
+  security:
+    name: Security Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        
+    - name: Install Dependencies
+      run: npm ci
+      
+    - name: Run Security Audit
+      run: npm audit
+      
+    - name: Run SAST
+      uses: github/codeql-action/analyze@v1
+
+  build:
+    name: Build
+    needs: [test, lint, security]
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        
+    - name: Install Dependencies
+      run: npm ci
+      
+    - name: Build
+      run: npm run build
+      
+    - name: Upload Build
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: build
+
+  deploy-staging:
+    name: Deploy to Staging
+    needs: build
+    if: github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Download Build
+      uses: actions/download-artifact@v2
+      with:
+        name: build
+        path: build
+        
+    - name: Deploy to Firebase Staging
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting --project staging
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+  deploy-production:
+    name: Deploy to Production
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Download Build
+      uses: actions/download-artifact@v2
+      with:
+        name: build
+        path: build
+        
+    - name: Deploy to Firebase Production
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting --project production
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+  notify:
+    name: Notify
+    needs: [deploy-staging, deploy-production]
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+    - name: Notify Slack
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,message,commit,author,action,workflow
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

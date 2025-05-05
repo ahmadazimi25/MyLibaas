@@ -19,7 +19,7 @@ export const NotificationProvider = ({ children }) => {
 
   // Initialize socket connection
   useEffect(() => {
-    const newSocket = io(process.env.REACT_APP_SOCKET_URL || 'http://localhost:3001');
+    const newSocket = io(process.env.REACT_APP_SOCKET_URL || 'http://localhost:5000');
     setSocket(newSocket);
 
     return () => newSocket.close();

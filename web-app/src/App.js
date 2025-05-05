@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, createRoutesFromElements } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { LocalizationProvider } from '@mui/x-date-pickers';
@@ -24,33 +24,35 @@ import { NotificationProvider } from './contexts/NotificationContext';
 // Components
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
-import PrivateRoute from './components/PrivateRoute';
 import NotificationCenter from './components/Notification/NotificationCenter';
-import NotificationPreferences from './components/Notification/NotificationPreferences';
-import DisputeAnalytics from './components/Analytics/DisputeAnalytics';
 import Footer from './components/Footer/Footer';
-import HowItWorks from './components/HowItWorks/HowItWorks';
-import BecomeALender from './components/BecomeALender/BecomeALender';
+import EmailVerification from './components/Auth/EmailVerification';
+import PasswordReset from './components/Auth/PasswordReset';
 
 // Pages
 import Home from './pages/Home';
 import Browse from './pages/Browse';
 import Login from './pages/Auth/Login';
 import Signup from './pages/Auth/Signup';
+import Dashboard from './pages/Dashboard';
 import ProductDetails from './pages/ProductDetails';
 import CreateListing from './pages/CreateListing';
 import Booking from './pages/Booking';
 import BookingDetails from './pages/Booking/BookingDetails';
-import Dashboard from './pages/Dashboard';
 import IDVerification from './components/Verification/IDVerification';
 import AdminVerification from './components/Verification/AdminVerification';
 import DamageReport from './components/Damage/DamageReport';
 import DisputeForm from './components/Dispute/DisputeForm';
 import DisputeDetails from './components/Dispute/DisputeDetails';
+import DisputeAnalytics from './components/Analytics/DisputeAnalytics';
+import NotificationPreferences from './components/Notification/NotificationPreferences';
+import HowItWorks from './components/HowItWorks/HowItWorks';
+import BecomeALender from './components/BecomeALender/BecomeALender';
 import PrivacyPolicy from './pages/Legal/PrivacyPolicy';
 import TermsOfService from './pages/Legal/TermsOfService';
 import RentalAgreement from './pages/Legal/RentalAgreement';
 import ReturnPolicy from './pages/Legal/ReturnPolicy';
+import DataDeletion from './pages/Legal/DataDeletion';
 
 function App() {
   return (
@@ -69,7 +71,10 @@ function App() {
                           <DamageProvider>
                             <DisputeProvider>
                               <NotificationProvider>
-                                <Router>
+                                <Router future={{ 
+                                  v7_relativeSplatPath: true,
+                                  v7_startTransition: true 
+                                }}>
                                   <Box sx={{ 
                                     display: 'flex', 
                                     flexDirection: 'column',
@@ -79,11 +84,38 @@ function App() {
                                       <NotificationCenter />
                                     </Navbar>
                                     <Routes>
+                                      {/* Public Routes */}
                                       <Route path="/" element={<Home />} />
                                       <Route path="/browse" element={<Browse />} />
                                       <Route path="/login" element={<Login />} />
                                       <Route path="/signup" element={<Signup />} />
-                                      <Route path="/items/:id" element={<ProductDetails />} />
+                                      <Route path="/verify-email" element={<EmailVerification />} />
+                                      <Route path="/reset-password" element={<PasswordReset />} />
+                                      <Route path="/how-it-works" element={<HowItWorks />} />
+                                      <Route path="/become-a-lender" element={<BecomeALender />} />
+                                      <Route path="/data-deletion" element={<DataDeletion />} />
+                                      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                                      <Route path="/terms-of-service" element={<TermsOfService />} />
+                                      <Route path="/rental-agreement" element={<RentalAgreement />} />
+                                      <Route path="/return-policy" element={<ReturnPolicy />} />
+                                      
+                                      {/* Protected Routes */}
+                                      <Route
+                                        path="/dashboard/*"
+                                        element={
+                                          <ProtectedRoute>
+                                            <Dashboard />
+                                          </ProtectedRoute>
+                                        }
+                                      />
+                                      <Route
+                                        path="/product/:id"
+                                        element={
+                                          <ProtectedRoute>
+                                            <ProductDetails />
+                                          </ProtectedRoute>
+                                        }
+                                      />
                                       <Route
                                         path="/create-listing"
                                         element={
@@ -101,7 +133,7 @@ function App() {
                                         }
                                       />
                                       <Route
-                                        path="/bookings/:id"
+                                        path="/booking-details/:id"
                                         element={
                                           <ProtectedRoute>
                                             <BookingDetails />
@@ -109,75 +141,61 @@ function App() {
                                         }
                                       />
                                       <Route
-                                        path="/dashboard/*"
+                                        path="/verify-id"
                                         element={
-                                          <PrivateRoute>
-                                            <Dashboard />
-                                          </PrivateRoute>
-                                        }
-                                      />
-                                      <Route
-                                        path="/verify"
-                                        element={
-                                          <PrivateRoute>
+                                          <ProtectedRoute>
                                             <IDVerification />
-                                          </PrivateRoute>
+                                          </ProtectedRoute>
                                         }
                                       />
                                       <Route
                                         path="/admin/verifications"
                                         element={
-                                          <PrivateRoute adminOnly>
+                                          <ProtectedRoute>
                                             <AdminVerification />
-                                          </PrivateRoute>
+                                          </ProtectedRoute>
                                         }
                                       />
                                       <Route
                                         path="/report-damage/:bookingId"
                                         element={
-                                          <PrivateRoute>
+                                          <ProtectedRoute>
                                             <DamageReport />
-                                          </PrivateRoute>
+                                          </ProtectedRoute>
                                         }
                                       />
                                       <Route
                                         path="/disputes/new/:bookingId"
                                         element={
-                                          <PrivateRoute>
+                                          <ProtectedRoute>
                                             <DisputeForm />
-                                          </PrivateRoute>
+                                          </ProtectedRoute>
                                         }
                                       />
                                       <Route
                                         path="/disputes/:disputeId"
                                         element={
-                                          <PrivateRoute>
+                                          <ProtectedRoute>
                                             <DisputeDetails />
-                                          </PrivateRoute>
+                                          </ProtectedRoute>
                                         }
                                       />
                                       <Route
                                         path="/settings/notifications"
                                         element={
-                                          <PrivateRoute>
+                                          <ProtectedRoute>
                                             <NotificationPreferences />
-                                          </PrivateRoute>
+                                          </ProtectedRoute>
                                         }
                                       />
                                       <Route
                                         path="/admin/analytics/disputes"
                                         element={
-                                          <PrivateRoute adminOnly>
+                                          <ProtectedRoute>
                                             <DisputeAnalytics />
-                                          </PrivateRoute>
+                                          </ProtectedRoute>
                                         }
                                       />
-                                      <Route path="/how-it-works" element={<HowItWorks />} />
-                                      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                                      <Route path="/terms" element={<TermsOfService />} />
-                                      <Route path="/rental-agreement" element={<RentalAgreement />} />
-                                      <Route path="/return-policy" element={<ReturnPolicy />} />
-                                      <Route path="/become-a-lender" element={<BecomeALender />} />
                                     </Routes>
                                     <Footer />
                                   </Box>

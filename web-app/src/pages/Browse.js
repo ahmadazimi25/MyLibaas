@@ -11,12 +11,15 @@ import {
   CardContent,
   CardMedia,
   Button,
+  CircularProgress,
+  Alert,
 } from '@mui/material';
 import { FilterList as FilterListIcon } from '@mui/icons-material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import SearchBar from '../components/Search/SearchBar';
 import FilterSidebar from '../components/Search/FilterSidebar';
 import { useSearch } from '../contexts/SearchContext';
+import ProductService from '../services/ProductService';
 
 const Browse = () => {
   const theme = useTheme();
@@ -26,44 +29,63 @@ const Browse = () => {
   const navigate = useNavigate();
   const { filters, searchQuery, buildSearchParams } = useSearch();
 
-  // TODO: Replace with actual API call
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [lastDoc, setLastDoc] = useState(null);
+  const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
-    // Simulate API call
     const fetchItems = async () => {
       setLoading(true);
+      setError(null);
       try {
-        // TODO: Replace with actual API call
-        const params = buildSearchParams();
-        console.log('Fetching items with params:', params);
-        
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Mock data
-        const mockItems = Array.from({ length: 12 }, (_, i) => ({
-          id: i + 1,
-          title: `Sample Item ${i + 1}`,
-          description: 'A beautiful piece of clothing for rent',
-          price: Math.floor(Math.random() * 200) + 50,
-          image: `https://picsum.photos/400/600?random=${i}`,
-          location: 'Toronto, ON',
-          rating: 4.5,
-          reviews: 12,
-        }));
-        
-        setItems(mockItems);
+        const searchParams = {
+          searchQuery,
+          filters,
+          sortBy: filters.sortBy || 'createdAt',
+          sortOrder: filters.sortOrder || 'desc'
+        };
+
+        const result = await ProductService.searchProducts(searchParams);
+        setItems(result.products);
+        setLastDoc(result.lastDoc);
+        setHasMore(result.hasMore);
       } catch (error) {
         console.error('Error fetching items:', error);
+        setError('Failed to load items. Please try again later.');
       } finally {
         setLoading(false);
       }
     };
 
     fetchItems();
-  }, [filters, searchQuery, buildSearchParams]);
+  }, [filters, searchQuery]);
+
+  const loadMore = async () => {
+    if (!hasMore || loading) return;
+
+    try {
+      setLoading(true);
+      const searchParams = {
+        searchQuery,
+        filters,
+        sortBy: filters.sortBy || 'createdAt',
+        sortOrder: filters.sortOrder || 'desc',
+        lastDoc
+      };
+
+      const result = await ProductService.searchProducts(searchParams);
+      setItems(prevItems => [...prevItems, ...result.products]);
+      setLastDoc(result.lastDoc);
+      setHasMore(result.hasMore);
+    } catch (error) {
+      console.error('Error loading more items:', error);
+      setError('Failed to load more items. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleFilterApply = () => {
     const params = buildSearchParams();
@@ -123,12 +145,18 @@ const Browse = () => {
             <Typography variant="h5" gutterBottom>
               Search Results
             </Typography>
-            {!loading && (
+            {!loading && !error && (
               <Typography color="text.secondary">
                 {items.length} items found
               </Typography>
             )}
           </Box>
+
+          {error && (
+            <Alert severity="error" sx={{ mb: 3 }}>
+              {error}
+            </Alert>
+          )}
 
           <Grid container spacing={3}>
             {items.map((item) => (
@@ -140,13 +168,15 @@ const Browse = () => {
                     flexDirection: 'column',
                     '&:hover': {
                       boxShadow: 6,
+                      transform: 'translateY(-4px)',
+                      transition: 'transform 0.2s ease-in-out',
                     },
                   }}
                 >
                   <CardMedia
                     component="img"
                     height="300"
-                    image={item.image}
+                    image={item.images[0]}
                     alt={item.title}
                     sx={{ objectFit: 'cover' }}
                   />
@@ -154,15 +184,11 @@ const Browse = () => {
                     <Typography gutterBottom variant="h6" component="h2">
                       {item.title}
                     </Typography>
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      gutterBottom
-                    >
-                      {item.location}
+                    <Typography variant="body2" color="text.secondary" gutterBottom>
+                      {item.culture}
                     </Typography>
                     <Typography variant="h6" color="primary">
-                      ${item.price}/day
+                      ${item.pricePerDay}/day
                     </Typography>
                     <Button
                       variant="outlined"
@@ -177,6 +203,26 @@ const Browse = () => {
               </Grid>
             ))}
           </Grid>
+
+          {/* Load More Button */}
+          {hasMore && !loading && !error && (
+            <Box sx={{ mt: 4, textAlign: 'center' }}>
+              <Button
+                variant="outlined"
+                onClick={loadMore}
+                size="large"
+              >
+                Load More
+              </Button>
+            </Box>
+          )}
+
+          {/* Loading Indicator */}
+          {loading && (
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+              <CircularProgress />
+            </Box>
+          )}
         </Grid>
       </Grid>
     </Container>

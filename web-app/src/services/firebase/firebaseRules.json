@@ -1,0 +1,90 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "true",
+        ".write": "auth != null && auth.uid == $uid",
+        ".validate": "newData.hasChildren(['username', 'createdAt'])",
+        "username": {
+          ".validate": "newData.isString() && newData.val().length >= 3"
+        },
+        "email": {
+          ".validate": "false"  // Never store email in public profile
+        },
+        "phone": {
+          ".validate": "false"  // Never store phone in public profile
+        }
+      }
+    },
+    "listings": {
+      ".read": "true",
+      "$listingId": {
+        ".write": "auth != null && 
+                   (!data.exists() || data.child('ownerUsername').val() == auth.token.username)",
+        ".validate": "newData.hasChildren(['title', 'price', 'ownerUsername'])",
+        "ownerUsername": {
+          ".validate": "newData.isString()"
+        },
+        "price": {
+          ".validate": "newData.isNumber() && newData.val() >= 0"
+        }
+      }
+    },
+    "rentals": {
+      "$rentalId": {
+        ".read": "auth != null && 
+                  (data.child('renterUsername').val() == auth.token.username || 
+                   data.child('ownerUsername').val() == auth.token.username)",
+        ".write": "auth != null && 
+                  (!data.exists() || 
+                   data.child('renterUsername').val() == auth.token.username || 
+                   data.child('ownerUsername').val() == auth.token.username)",
+        ".validate": "newData.hasChildren(['listingId', 'renterUsername', 'ownerUsername', 'startDate', 'endDate'])"
+      }
+    },
+    "reviews": {
+      ".read": "true",
+      "$reviewId": {
+        ".write": "auth != null && 
+                   (!data.exists() && 
+                    root.child('rentals').child(newData.child('rentalId').val())
+                    .child('renterUsername').val() == auth.token.username)",
+        ".validate": "newData.hasChildren(['rentalId', 'reviewerUsername', 'ratings'])",
+        "ratings": {
+          ".validate": "newData.hasChildren(['overall', 'condition', 'accuracy', 'communication', 'value'])"
+        }
+      }
+    },
+    "messages": {
+      "$conversationId": {
+        ".read": "auth != null && 
+                  data.child('participants').val().contains(auth.token.username)",
+        ".write": "auth != null && 
+                  data.child('participants').val().contains(auth.token.username)",
+        "messages": {
+          "$messageId": {
+            ".validate": "newData.hasChildren(['content', 'sender', 'timestamp'])",
+            "content": {
+              ".validate": "newData.isString() && 
+                          !newData.val().contains('@') && 
+                          !newData.val().matches(/[0-9]{10}/) && 
+                          !newData.val().contains('http')"
+            }
+          }
+        }
+      }
+    },
+    "transactions": {
+      "$transactionId": {
+        ".read": "auth != null && 
+                  (root.child('rentals').child(data.child('rentalId').val())
+                  .child('renterUsername').val() == auth.token.username || 
+                   root.child('rentals').child(data.child('rentalId').val())
+                  .child('ownerUsername').val() == auth.token.username)",
+        ".write": "auth != null && 
+                  (!data.exists() || data.child('status').val() == 'pending')",
+        ".validate": "newData.hasChildren(['rentalId', 'amount', 'type', 'status'])"
+      }
+    }
+  }
+}

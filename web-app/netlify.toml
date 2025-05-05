@@ -13,9 +13,17 @@
   framework = "create-react-app"
   targetPort = 3000
 
+[functions]
+  directory = "netlify/functions"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/api/facebook/data-deletion"
+  to = "/.netlify/functions/facebook-data-deletion"
   status = 200
 
 [[headers]]
@@ -25,4 +33,4 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval';"
+    Content-Security-Policy = "default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval' *.facebook.com *.fbcdn.net; frame-src 'self' *.facebook.com *.firebaseapp.com; connect-src 'self' *.facebook.com wss://*.facebook.com;"
